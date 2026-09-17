@@ -1,0 +1,2 @@
+# Schema validation, replay, evaluation and the static site require only Python 3.10+.
+# No runtime dependencies. Optional tensor smoke: requirements-smoke.txt.

@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite the anonymous SafetyFlip submission during double-blind review."
+title: "SafetyFlip: Learning LLM Safety Boundaries from Bidirectional Counterfactual Instructions"
+type: software
+version: 0.1.0
+authors:
+  - name: "Anonymous authors"
+url: "https://anonymous.4open.science/r/SafetyFlip/"
+abstract: "Reference components and an illustrative research website for the anonymous SafetyFlip submission. Exact experiment artifacts are forthcoming."

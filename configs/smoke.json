@@ -1,0 +1,17 @@
+{
+  "status": "toy CPU optimizer smoke; implementation choices, not paper hyperparameters",
+  "seed": 17,
+  "steps": 2,
+  "hidden_size": 16,
+  "learning_rate": 0.001,
+  "critic_learning_rate": 0.001,
+  "weight_decay": 0.0,
+  "pooling": "masked_mean",
+  "tokenizer": "UTF-8 bytes plus PAD/BOS/EOS",
+  "model": "randomly initialized one-layer GRU",
+  "objective": {"beta": 0.1, "lambda_1": 1.0, "lambda_2": 0.5, "lambda_3": 0.1, "lambda_info": 0.7},
+  "data": "data/examples.jsonl",
+  "shortcut_labels_original_then_flipped": [0, 1, 0, 1],
+  "semantic_labels_original_then_flipped": [0, 1, 0, 1],
+  "label_note": "Two manually assigned toy domain classes: conflict communication and residential noise. Equal within each pair; neither target is the Safe/Unsafe label. Both toy ontologies coincide here solely for wiring checks; this does not establish disentanglement or reproduce the unavailable original ontologies."
+}

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SafetyFlip learns LLM safety boundaries from bidirectional counterfactual instructions. Explore the method, paper-reported results, and an anonymous reference release.">
+  <meta name="theme-color" content="#f5f4ed">
+  <title>SafetyFlip — Learn the boundary. Keep the utility.</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="SafetyFlip home"><span class="brand-mark" aria-hidden="true">S<span>↔</span></span>SafetyFlip<span class="brand-period">.</span></a>
+    <nav aria-label="Main navigation"><a href="#explore">Explore</a><a href="#method">Method</a><a href="#results">Results</a><a href="#release">Release</a></nav>
+    <a class="header-paper" href="assets/paper.pdf">Read the paper <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell" aria-labelledby="hero-heading">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span>ANONYMOUS RESEARCH · UNDER REVIEW, ICLR 2027</div>
+        <h1 id="hero-heading">Learn the<br><span class="serif-word">boundary.</span><br>Keep the utility<span class="teal-dot">.</span></h1>
+        <p class="hero-description">A small change in intent can change the right response. SafetyFlip teaches language models to recognize that difference through matched, bidirectional counterfactual instructions.</p>
+        <div class="hero-actions"><a class="button button-dark" href="#explore">Explore the boundary <span aria-hidden="true">↗</span></a><a class="text-link" href="assets/paper.pdf">Read paper <span aria-hidden="true">↗</span></a></div>
+        <p class="hero-subline">Safe ↔ Unsafe instructions. <strong>Safe responses on both sides.</strong></p>
+      </div>
+      <div class="hero-visual">
+        <div class="figure-topline"><span>THE SAME FRAME. A DIFFERENT FACTOR.</span><span aria-hidden="true">FIG. 01</span></div>
+        <svg class="boundary-figure" viewBox="0 0 560 480" role="img" aria-labelledby="boundary-title boundary-desc">
+          <title id="boundary-title">A conceptual map of matched instructions across a safety boundary</title>
+          <desc id="boundary-desc">Three pairs connect safe and unsafe instructions across a curved boundary. They share a semantic frame but differ in a safety-critical factor. This is a schematic, not measured model embeddings.</desc>
+          <defs>
+            <pattern id="dot-grid" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#d5d9d0"/></pattern>
+            <linearGradient id="safe-wash" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ccebe0"/><stop offset="1" stop-color="#e5efe4"/></linearGradient>
+            <linearGradient id="unsafe-wash" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f5d9c8"/><stop offset="1" stop-color="#f4e9dd"/></linearGradient>
+            <marker id="arrow-teal" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#24715f"/></marker>
+          </defs>
+          <rect x="0" y="0" width="560" height="480" fill="url(#dot-grid)"/>
+          <path d="M48 345 C13 276 45 100 164 77 C246 62 337 98 333 178 C327 275 312 365 215 391 C147 411 78 409 48 345Z" fill="url(#safe-wash)" opacity=".85"/>
+          <path d="M244 147 C288 81 431 84 492 149 C548 208 557 336 474 395 C405 444 262 437 241 348 C230 301 207 206 244 147Z" fill="url(#unsafe-wash)" opacity=".8"/>
+          <path d="M326 50 C391 190 184 225 275 438" stroke="#192a28" stroke-width="2" stroke-dasharray="6 8" fill="none"/>
+          <g fill="#207f6d" opacity=".26"><circle cx="96" cy="208" r="5"/><circle cx="160" cy="153" r="4"/><circle cx="203" cy="132" r="6"/><circle cx="116" cy="331" r="5"/><circle cx="170" cy="355" r="4"/><circle cx="81" cy="265" r="4"/><circle cx="234" cy="222" r="4"/><circle cx="251" cy="144" r="4"/><circle cx="215" cy="372" r="5"/><circle cx="163" cy="269" r="4"/><circle cx="139" cy="105" r="3"/></g>
+          <g fill="#c77655" opacity=".32"><circle cx="383" cy="148" r="5"/><circle cx="432" cy="211" r="4"/><circle cx="403" cy="300" r="4"/><circle cx="457" cy="335" r="6"/><circle cx="344" cy="361" r="5"/><circle cx="443" cy="383" r="4"/><circle cx="487" cy="266" r="4"/><circle cx="301" cy="293" r="3"/><circle cx="464" cy="166" r="3"/></g>
+          <g stroke="#24715f" stroke-width="1.6" fill="none" marker-start="url(#arrow-teal)" marker-end="url(#arrow-teal)"><path d="M217 176 L351 205"/><path d="M196 247 L322 269"/><path d="M193 324 L322 342"/></g>
+          <g fill="#168770" stroke="#f5f4ed" stroke-width="4"><circle cx="204" cy="173" r="10"/><circle cx="183" cy="245" r="10"/><circle cx="180" cy="322" r="10"/></g>
+          <g fill="#d47a52" stroke="#f5f4ed" stroke-width="4"><circle cx="363" cy="208" r="10"/><circle cx="334" cy="272" r="10"/><circle cx="334" cy="344" r="10"/></g>
+          <g font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" letter-spacing="1.5"><text x="64" y="65" fill="#17644f">SAFE</text><text x="408" y="65" fill="#9b5035">UNSAFE</text></g>
+          <g font-family="Segoe UI, sans-serif" font-size="12" fill="#53615b"><text x="63" y="188">consent</text><text x="382" y="208">no consent</text><text x="62" y="247">defend</text><text x="353" y="273">intrude</text><text x="62" y="326">de-escalate</text><text x="354" y="348">coerce</text></g>
+          <g transform="translate(328 22)"><rect x="0" y="0" width="158" height="28" rx="14" fill="#192a28"/><text x="79" y="18" text-anchor="middle" fill="#fff" font-family="Segoe UI, sans-serif" font-size="11">learned safety boundary</text></g>
+          <g transform="translate(135 437)"><rect width="290" height="30" rx="15" fill="#f5f4ed" stroke="#d5d9d0"/><text x="145" y="19" text-anchor="middle" fill="#54635c" font-family="Segoe UI, sans-serif" font-size="11">Preserve the frame. Flip the critical factor.</text></g>
+        </svg>
+        <div class="figure-caption"><span class="tiny-pair" aria-hidden="true"><i></i>↔<i></i></span><span>Conceptual illustration · not measured embeddings</span></div>
+      </div>
+    </section>
+
+    <section class="summary-band section-shell" aria-label="Paper-reported headline results">
+      <div class="summary-intro"><span class="eyebrow">REPORTED IN THE PAPER</span><p>Stronger boundaries.<br> A visible tradeoff.</p><a href="#results">Qwen2.5-7B · Table 3 <span aria-hidden="true">↗</span></a></div>
+      <div class="summary-stat"><span class="stat-label">ATTACK SUCCESS ↓</span><div class="stat-values"><s>58.4</s><span class="stat-arrow">→</span><strong>6.5<span>%</span></strong></div><p>HarmBench · <b>−51.9 percentage points</b></p></div>
+      <div class="summary-stat"><span class="stat-label">OVER-REFUSAL ↓</span><div class="stat-values"><s>1.2</s><span class="stat-arrow">→</span><strong>2.1<span>%</span></strong></div><p>XSTest · <b>+0.9 percentage points</b></p></div>
+      <div class="summary-stat"><span class="stat-label">GENERAL UTILITY ↑</span><div class="stat-values"><s>7.61</s><span class="stat-arrow">→</span><strong>7.85</strong></div><p>MT-Bench · <b>+0.24 score</b></p></div>
+    </section>
+
+    <section id="explore" class="explore-section section-shell section-space" aria-labelledby="explore-heading">
+      <div class="section-heading"><div><span class="eyebrow"><span class="section-number">01 /</span> THE BOUNDARY LAB</span><h2 id="explore-heading">One frame.<br><span class="serif-word">Two different obligations.</span></h2></div><p>Change the safety-critical factor while preserving the task’s non-safety context. Explore why the instruction label changes—and why both responses must remain safe.</p></div>
+      <div class="interactive-note"><span class="note-dot"></span>ILLUSTRATIVE LOCAL DEMO <span class="note-divider">/</span> Curated examples, not model inference or released training data.</div>
+      <div class="pair-lab">
+        <div class="lab-toolbar"><div class="case-buttons" role="group" aria-label="Choose an illustrative example"><button type="button" class="case-button active" data-case="network" aria-pressed="true"><span>01</span> Network access</button><button type="button" class="case-button" data-case="conflict" aria-pressed="false"><span>02</span> Neighborhood conflict</button><button type="button" class="case-button" data-case="consent" aria-pressed="false"><span>03</span> Location & consent</button></div><button type="button" id="flip-direction" class="direction-button" aria-label="Reverse pair direction">Safe <span aria-hidden="true">⇄</span> Unsafe</button></div>
+        <div class="shared-frame"><span class="frame-icon" aria-hidden="true">⊞</span><div><span class="small-label">PRESERVED FRAME · r_frame</span><p id="pair-frame">Guidance about Wi-Fi access and security.</p></div><span class="frame-tag">shared across the pair</span></div>
+        <div id="pair-content" class="pair-content" aria-live="polite" aria-atomic="true"></div>
+        <div class="pair-bottom"><span><span class="mini-dot"></span>Instruction safety ≠ response safety</span><p>Structured annotation: <code>c = (r_frame, r_crit, r_policy)</code> <a href="assets/paper.pdf#page=5" aria-label="Read section 3.2.2 in the paper">§3.2.2 ↗</a></p></div>
+      </div>
+      <noscript><div class="noscript-note">The interactive explorers need JavaScript. The paper, method description, release notes, and headline results remain available. Enable JavaScript to switch examples and inspect the full result tables.</div></noscript>
+    </section>
+
+    <section id="method" class="method-section section-space" aria-labelledby="method-heading">
+      <div class="section-shell">
+        <div class="section-heading"><div><span class="eyebrow"><span class="section-number">02 /</span> INSIDE SAFETYFLIP</span><h2 id="method-heading">Construct pairs.<br><span class="serif-word">Then learn the boundary.</span></h2></div><p>Four offline agent roles construct and validate the paired supervision. Boundary-Constrained Fine-Tuning combines annotation–response supervision with safety contrastive regularization.</p></div>
+        <div class="pipeline-layout"><div class="pipeline-main"><div class="pipeline-top"><span class="small-label">A / OFFLINE DATA CONSTRUCTION</span><span class="pipeline-hint">Select a stage to explore</span></div><div class="pipeline-steps" role="group" aria-label="Pipeline stages"><button type="button" class="pipeline-step active" data-step="0" aria-pressed="true"><span>01</span>Analysis</button><button type="button" class="pipeline-step" data-step="1" aria-pressed="false"><span>02</span>Reversal</button><button type="button" class="pipeline-step" data-step="2" aria-pressed="false"><span>03</span>Re-analysis</button><button type="button" class="pipeline-step" data-step="3" aria-pressed="false"><span>04</span>Answer</button><button type="button" class="pipeline-step" data-step="4" aria-pressed="false"><span>05</span>Validation</button></div><div id="pipeline-detail" class="pipeline-detail" aria-live="polite" aria-atomic="true"></div><div class="pipeline-bottom"><p>All four paper roles: <strong>Qwen2.5-72B-Instruct</strong><br>Re-analysis reuses the Analysis role on the flipped instruction.</p><div class="step-navigation"><button type="button" id="previous-step" aria-label="Previous pipeline stage">←</button><button type="button" id="next-step" aria-label="Next pipeline stage">→</button></div></div></div><aside class="gate-panel"><span class="gate-symbol" aria-hidden="true">⋂</span><span class="small-label">ACCEPT ONLY IF</span><h3>Every check<br>holds.</h3><ul><li>Frame preservation <strong>&gt; 0.8</strong></li><li>Safety label is inverted</li><li>Annotations agree with behavior</li><li>Both responses remain safe</li></ul><p>Gate specification, not a scored sample.<br><a href="assets/paper.pdf#page=15">Appendix A.3, p. 15 ↗</a></p></aside></div>
+        <div class="training-strip"><div><span class="small-label">B / BOUNDARY-CONSTRAINED FINE-TUNING</span><h3>Learn what changes.<br>Preserve what should not.</h3></div><div class="training-objectives"><div><span class="objective-index">01</span><h4>Joint supervision</h4><p>Learn structured annotations and safe responses, with forward KL to the frozen base model.</p></div><div><span class="objective-index">02</span><h4>Directional structure</h4><p>Orient paired instruction displacements along a learned safety direction; preserve orthogonal response features.</p></div><div><span class="objective-index">03</span><h4>Less shortcut reliance</h4><p>Use auxiliary critics to discourage shortcut prediction while retaining non-safety semantic information.</p></div></div></div>
+        <p class="method-footnote">The paper describes response-only deployment with no teacher agents or auxiliary critics at inference. The exact annotation-free decoding/export recipe is forthcoming. <a href="assets/paper.pdf#page=5">Method, §§3.2–3.3 ↗</a></p>
+      </div>
+    </section>
+
+    <section id="results" class="results-section section-shell section-space" aria-labelledby="results-heading">
+      <div class="section-heading"><div><span class="eyebrow"><span class="section-number">03 /</span> EVIDENCE & TRADEOFFS</span><h2 id="results-heading">Read the numbers.<br><span class="serif-word">Keep the context.</span></h2></div><p>Explore exact values reported for Qwen2.5-7B in the paper. These are reported table values, not experiments run by this website or the reference release.</p></div>
+      <div class="results-toolbar"><div class="table-switch" role="group" aria-label="Choose a reported result table"><button type="button" data-table="comparison" class="active" aria-pressed="true">Alignment methods <span>Table 3</span></button><button type="button" data-table="ablation" aria-pressed="false">Ablations <span>Table 5</span></button></div><span class="reported-tag">PAPER-REPORTED</span></div>
+      <div class="results-card"><div class="metric-switch" role="group" aria-label="Select chart metric"><button type="button" data-metric="asr" class="active" aria-pressed="true">ASR <span>↓</span></button><button type="button" data-metric="or" aria-pressed="false">OR <span>↓</span></button><button type="button" data-metric="mt" aria-pressed="false">MT <span>↑</span></button><button type="button" data-metric="srr" aria-pressed="false">SRR <span>↑</span></button><button type="button" data-metric="bmr" aria-pressed="false">BMR <span>↓</span></button></div><div class="chart-header"><div><h3 id="chart-title">Attack success rate</h3><p id="chart-subtitle">HarmBench · public out-of-distribution evaluation</p></div><span id="metric-direction" class="direction-tag">Lower is better · %</span></div><div id="result-chart" class="result-chart" role="img" aria-label="Paper-reported attack success rates"></div><div class="chart-foot"><p id="chart-insight" aria-live="polite"></p><a id="table-source" href="assets/paper.pdf#page=9">Table 3 · p. 9 ↗</a></div><div class="table-container" tabindex="0" role="region" aria-label="All reported metric values; scroll horizontally on small screens"><table id="results-table"><caption id="results-caption">Paper-reported Qwen2.5-7B alignment methods — Table 3, p. 9</caption><thead><tr><th scope="col">Method / configuration</th><th scope="col" data-column="asr">ASR ↓ <span>% · public</span></th><th scope="col" data-column="or">OR ↓ <span>% · public</span></th><th scope="col" data-column="mt">MT ↑ <span>score · public</span></th><th scope="col" data-column="srr">SRR ↑ <span>% · internal</span></th><th scope="col" data-column="bmr">BMR ↓ <span>% · internal</span></th></tr></thead><tbody id="results-body"></tbody></table></div></div>
+      <div class="result-notes"><p><strong>Public evaluation:</strong> HarmBench ASR, XSTest over-refusal on safe prompts, and MT-Bench utility. SafetyFlip balances these objectives; Safe-RLHF has the lowest ASR and Base the lowest OR in Table 3.</p><p><strong>Internal diagnostics:</strong> SRR and BMR use SafetyFlip-Test (500 pairs). SRR considers prompts where safe redirection is applicable. These are not independently sourced public out-of-distribution results.</p></div>
+    </section>
+
+    <section id="release" class="release-section section-shell section-space" aria-labelledby="release-heading">
+      <div class="release-intro"><span class="eyebrow"><span class="section-number">04 /</span> AN OPEN, ANONYMOUS RELEASE</span><h2 id="release-heading">Reproducibility<br>starts with <span class="serif-word">clarity.</span></h2><p>This release provides an inspectable reference implementation and local demonstrations. Reproducing the paper’s reported model training and benchmarks still requires the artifacts listed here.</p><a class="button button-dark" href="https://anonymous.4open.science/r/SafetyFlip/">Anonymous repository <span aria-hidden="true">↗</span></a><p class="release-privacy">No accounts, external fonts, trackers, or model API calls are used by this page.</p></div>
+      <div class="release-list"><div class="release-item"><div><h3>Paper & interactive method demos</h3><p>Local PDF, pair explorer, pipeline walkthrough, and exact reported metric tables.</p></div><span class="availability available">Available</span></div><div class="release-item"><div><h3>Reference code & smoke fixtures</h3><p>Inspectable method components, illustrative data, and local checks. Smoke checks do not establish benchmark reproduction.</p></div><span class="availability available">Available</span></div><div class="release-item"><div><h3>Training & diagnostic data</h3><p>8,000 accepted pairs, the 500-pair internal test set, source licenses, split manifests, and construction traces.</p></div><span class="availability forthcoming">Forthcoming</span></div><div class="release-item"><div><h3>Checkpoints & exact training recipe</h3><p>Model revisions, unreported hyperparameters, run manifests, critic details, and the deployment/export recipe.</p></div><span class="availability forthcoming">Forthcoming</span></div><div class="release-item"><div><h3>Full benchmark reproduction</h3><p>Dataset versions, attack and judging protocols, per-example generations, seed IDs, and uncertainty definitions.</p></div><span class="availability forthcoming">Forthcoming</span></div></div>
+    </section>
+
+    <section class="paper-banner section-shell" aria-label="Read the paper"><div><span class="small-label">THE PAPER</span><h2>SafetyFlip: Learning LLM Safety Boundaries<br>from Bidirectional Counterfactual Instructions</h2><p>Anonymous authors · Under review as a conference paper at ICLR 2027</p></div><a href="assets/paper.pdf" class="paper-arrow" aria-label="Open the SafetyFlip paper PDF">↗</a></section>
+  </main>
+  <footer class="site-footer section-shell"><a class="brand" href="#">SafetyFlip<span class="brand-period">.</span></a><p>A research project on helpfulness, safety, and the boundary between.</p><div><a href="assets/paper.pdf">Paper ↗</a><a href="https://anonymous.4open.science/r/SafetyFlip/">Anonymous code ↗</a><a href="#main">Back to top ↑</a></div></footer>
+</body>
+</html>
