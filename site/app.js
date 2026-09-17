@@ -241,7 +241,13 @@ function renderResults() {
   });
 }
 
-document.querySelectorAll("[data-case]").forEach(button => button.addEventListener("click", () => { selectedExample = button.dataset.case; renderPair(); }));
+document.querySelectorAll("[data-case]").forEach(button => button.addEventListener("click", () => {
+  selectedExample = button.dataset.case;
+  renderPair();
+  if (button.classList.contains("preview-open")) {
+    document.getElementById("pair-lab").scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" });
+  }
+}));
 document.getElementById("flip-direction").addEventListener("click", () => { safeFirst = !safeFirst; renderPair(); });
 document.querySelectorAll("[data-step]").forEach(button => button.addEventListener("click", () => { selectedStage = Number(button.dataset.step); renderPipeline(); }));
 document.getElementById("previous-step").addEventListener("click", () => { if (selectedStage > 0) { selectedStage--; renderPipeline(); } });
@@ -252,3 +258,98 @@ document.querySelectorAll("[data-metric]").forEach(button => button.addEventList
 renderPair();
 renderPipeline();
 renderResults();
+
+// Chapter controls seek only after an explicit click. There is no autoplay.
+const film = document.getElementById("boundary-video");
+const chapterButtons = [...document.querySelectorAll("[data-time]")];
+let pendingFilmTime = null;
+chapterButtons.forEach(button => button.addEventListener("click", () => {
+  pendingFilmTime = Number(button.dataset.time);
+  if (film.readyState >= 1) {
+    film.currentTime = pendingFilmTime;
+    pendingFilmTime = null;
+  }
+  film.play().catch(() => {
+    // Keep native controls available when playback is blocked or unsupported.
+  });
+}));
+film.addEventListener("loadedmetadata", () => {
+  if (pendingFilmTime !== null) {
+    film.currentTime = Math.min(pendingFilmTime, film.duration);
+    pendingFilmTime = null;
+  }
+});
+film.addEventListener("timeupdate", () => {
+  const currentChapter = Math.min(3, Math.floor(film.currentTime / 6));
+  setPressed(chapterButtons, button => Number(button.dataset.time) / 6 === currentChapter);
+});
+
+const modules = {
+  schema: {
+    kicker: "01 / DATA CONTRACT", title: "Make every pair explicit.",
+    description: "Typed records carry both instructions, their structured annotations, safe responses, and validation judgments. The strict gate checks preservation > 0.8 and the required safety conditions.",
+    contract: "JSONL → Pair → validation gate",
+    symbols: ["Pair", "gate_reasons", "serialize_target"],
+    limitation: "Recorded judgments are checked for consistency; this module does not independently judge text safety."
+  },
+  pipeline: {
+    kicker: "02 / OFFLINE CONSTRUCTION", title: "Follow the complete pair lifecycle.",
+    description: "Analysis identifies the original frame and label. Reversal constructs the counterfactual; independent re-analysis checks its annotation. Answer produces both responses, and Validation applies the strict gate.",
+    contract: "Analysis → Reversal → Re-analysis → Answer → Validation",
+    symbols: ["Provider", "SafetyFlipPipeline", "FixtureReplayProvider"],
+    limitation: "The included provider replays authored fixtures. A live teacher adapter and exact teacher prompts are forthcoming."
+  },
+  losses: {
+    kicker: "03 / THE LEARNING OBJECTIVE", title: "Encode the boundary constraints.",
+    description: "Combine joint annotation–response supervision and forward KL with directional instruction displacement, orthogonal response consistency, and auxiliary shortcut and semantic critics.",
+    contract: "joint SFT + β · KL + Safety Contrastive Regularization",
+    symbols: ["BCFTObjective", "BoundaryCritics", "directional_loss", "consistency_loss"],
+    limitation: "Reference tensor mathematics with gradient checks. PyTorch is required; this module is not an end-to-end Qwen training launcher."
+  },
+  smoke: {
+    kicker: "04 / LOCAL OPTIMIZATION CHECK", title: "Check the gradients on CPU.",
+    description: "A tiny causal model runs deterministic optimization on illustrative fixtures, exercising the BCFT objective, critics, and learned direction with the separate smoke configuration.",
+    contract: "python -m safetyflip smoke-losses --config configs/smoke.json",
+    symbols: ["TinyCausalModel", "run_smoke", "configs/smoke.json"],
+    limitation: "Install requirements-smoke.txt first. The toy model and settings validate implementation flow; they do not reproduce the reported experiments."
+  },
+  evaluation: {
+    kicker: "05 / METRIC AGGREGATION", title: "Keep judgments and metrics traceable.",
+    description: "Validate explicit per-example judgments and aggregate attack success, over-refusal, utility, and internal boundary diagnostics. Metric denominators and redirection applicability are handled explicitly.",
+    contract: "explicit JSONL judgments → validation → metric summary",
+    symbols: ["validate_judgment", "aggregate", "load_jsonl"],
+    limitation: "Aggregates supplied judgments; it does not generate model answers, run attacks, or replace the benchmark judges."
+  }
+};
+
+function renderModule(key) {
+  const data = modules[key];
+  const contract = element("div", "module-contract");
+  contract.append(element("span", "", "INPUT → OUTPUT"), element("code", "", data.contract));
+  const symbols = element("div", "module-symbols");
+  data.symbols.forEach(symbol => symbols.append(element("span", "", symbol)));
+  document.getElementById("module-detail").replaceChildren(
+    element("span", "module-kicker", data.kicker), element("h3", "", data.title),
+    element("p", "", data.description), contract, symbols,
+    element("p", "module-limit", data.limitation)
+  );
+  setPressed(document.querySelectorAll("[data-module]"), button => button.dataset.module === key);
+}
+document.querySelectorAll("[data-module]").forEach(button => button.addEventListener("click", () => renderModule(button.dataset.module)));
+
+document.getElementById("copy-quickstart").addEventListener("click", async () => {
+  const commands = document.getElementById("quickstart-commands");
+  const status = document.getElementById("copy-status");
+  try {
+    if (!navigator.clipboard?.writeText) throw new Error("Clipboard unavailable");
+    await navigator.clipboard.writeText(commands.textContent.trim());
+    status.textContent = "Commands copied. Run them from the repository root.";
+  } catch {
+    const selection = window.getSelection();
+    const range = document.createRange();
+    range.selectNodeContents(commands);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    status.textContent = "Commands selected. Press Ctrl+C (or ⌘C) to copy.";
+  }
+});

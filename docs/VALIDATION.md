@@ -12,10 +12,11 @@ Verified locally on 2026-09-17 with Python 3.10 and PyTorch 2.5.1+cpu on Windows
 | Joint annotation–response target | 2,254 supervised toy byte-token targets; prompt and padding excluded |
 | Evaluation examples | Supplied synthetic judgments aggregated separately by benchmark, with provenance, support and input hash |
 | JavaScript syntax | `node --check site/app.js` passed |
-| Browser interactions | Three examples in both directions, all five pipeline stages, and both tables with all five metrics passed |
+| Browser interactions | Four video chapter seeks and playback, three cases in both directions, all five code modules, copy fallback, all five pipeline stages, and both tables with all five metrics passed |
+| Boundary film | Bundled H.264 video is 24 seconds, 1280 × 720, 30 fps; full decoding passed, chapter stills visually reviewed; no audio or personal metadata |
 | Table fidelity | All 45 values in the two interactive result tables matched the manuscript audit |
-| Responsive layout | No whole-page horizontal overflow at 1440, 1024, 768, 620, 390 or 320 pixel widths |
-| Static/offline page | HTTP preview and direct file opening passed; no JavaScript/console errors or external resource requests observed |
+| Responsive layout | No whole-page horizontal overflow at 1440, 1024, 768, 620, 390, 360 or 320 pixel widths; reduced-motion preference honored |
+| Static/offline page | HTTP preview and direct file opening passed, including video playback; no JavaScript/console errors or external resource requests observed; file-mode captions use the written transcript because browser local-file track restrictions vary |
 | Anonymous export checks | Text screening for common secrets, email addresses, user paths and supplied identity markers passed; local HTML links resolved |
 | Bundled paper | Original anonymous manuscript copied unchanged; Author/Title metadata empty, no XMP metadata or attached files; embedded URLs reviewed |
 

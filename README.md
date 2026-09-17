@@ -1,7 +1,7 @@
 <p align="center"><strong>SafetyFlip</strong><br>Learning LLM Safety Boundaries from Bidirectional Counterfactual Instructions</p>
 <p align="center">Anonymous authors · ICLR 2027 submission under review</p>
 
-<p align="center"><a href="site/assets/paper.pdf">Paper</a> · <a href="site/index.html">Interactive project page</a> · <a href="https://anonymous.4open.science/r/SafetyFlip/">Anonymous repository</a> · <a href="docs/REPRODUCIBILITY.md">Reproducibility status</a></p>
+<p align="center"><a href="site/assets/paper.pdf">Paper</a> · <a href="site/index.html">Website source</a> · <a href="https://anonymous.4open.science/r/SafetyFlip/">Anonymous repository</a> · <a href="docs/REPRODUCIBILITY.md">Reproducibility status</a></p>
 
 SafetyFlip constructs matched **Safe ↔ Unsafe instruction pairs** that preserve the non-safety semantic frame while changing the safety-critical factor. Both sides receive safe, policy-consistent responses: helpful compliance for safe requests, refusal or a relevant safe pivot for unsafe requests. Boundary-Constrained Fine-Tuning (BCFT) combines joint structured annotation–response supervision, a base-policy KL penalty, and Safety Contrastive Regularization (SCR).
 
@@ -20,7 +20,11 @@ python -m safetyflip.evaluation data/evaluation_example.jsonl
 python scripts/serve.py
 ```
 
-Open **http://127.0.0.1:8765** for the website. You can also open `site/index.html` directly. The page includes a boundary-pair explorer, an offline construction walkthrough, and a metric/ablation explorer. Every response example is labeled illustrative; every experimental score is labeled paper-reported. No inference service is connected.
+Open **http://127.0.0.1:8765** for the website. You can also open `site/index.html` directly. The page starts with a **24-second boundary animation**, followed by visible reversal cases and an interactive guide to the repository's modules and commands. The construction walkthrough and metric/ablation explorer follow. Every response example is labeled illustrative; every experimental score is labeled paper-reported. No inference service is connected.
+
+The bundled [H.264 animation](site/assets/boundary-film.mp4) explains seed data, counterfactual construction, BCFT/SCR and safe behavior on both sides. It uses authored schematic coordinates, not measured embeddings or training traces. See [media build notes](docs/MEDIA.md) for its reproducible renderer.
+
+A repository browser may display `site/index.html` as source code. Download the source and use the local preview command above to view the interactive page. An authenticated private development copy and a public anonymous mirror are separate surfaces; updates are visible on a mirror only after its maintainer synchronizes it.
 
 ## Check the BCFT objective on CPU
 

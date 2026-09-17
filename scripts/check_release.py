@@ -16,7 +16,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 EXCLUDE = {".git", "__pycache__", ".venv", "venv", ".pytest_cache", ".DS_Store", "node_modules", "build", "dist", "runs", "checkpoints", ".vscode", ".idea", ".ipynb_checkpoints"}
-TEXT = {".py", ".md", ".html", ".js", ".css", ".json", ".jsonl", ".yaml", ".yml", ".toml", ".txt", ".svg", ".cff"}
+TEXT = {".py", ".md", ".html", ".js", ".css", ".json", ".jsonl", ".yaml", ".yml", ".toml", ".txt", ".svg", ".cff", ".vtt"}
 PATTERNS = {
     "email address": re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b"),
     "local user path": re.compile(r"(?:[A-Za-z]:[\\/]Users[\\/]|/Users/|/home/)[A-Za-z0-9._-]+", re.I),
@@ -50,7 +50,7 @@ class Links(HTMLParser):
         attrs = dict(attrs)
         if "id" in attrs:
             self.ids.add(attrs["id"])
-        for attr in ("src", "href"):
+        for attr in ("src", "href", "poster"):
             if attr in attrs:
                 self.links.append((tag, attr, attrs[attr]))
 
@@ -60,7 +60,7 @@ def audit(deny=()):
     files = list(release_files())
     for path in files:
         rel = path.relative_to(ROOT).as_posix()
-        if path.suffix not in TEXT and path.name not in {".gitignore"}:
+        if path.suffix not in TEXT and path.name not in {".gitignore", ".gitattributes"}:
             continue
         content = path.read_text(encoding="utf-8-sig")
         for label, pattern in PATTERNS.items():
@@ -77,7 +77,7 @@ def audit(deny=()):
             for tag, attr, target in parser.links:
                 link = urlsplit(target)
                 if link.scheme in {"http", "https"}:
-                    if attr == "src" or tag == "link":
+                    if attr in {"src", "poster"} or tag == "link":
                         errors.append(f"{rel}: externally loaded asset")
                     continue
                 if link.scheme:
@@ -106,7 +106,7 @@ def main():
         raise SystemExit(1)
     if args.manifest or args.archive:
         manifest = ROOT / "MANIFEST.sha256"
-        manifest.write_text("".join(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.relative_to(ROOT).as_posix()}\n" for p in files), encoding="utf-8")
+        manifest.write_text("".join(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.relative_to(ROOT).as_posix()}\n" for p in files), encoding="utf-8", newline="\n")
     if args.archive:
         destination = args.archive.resolve()
         if destination.is_relative_to(ROOT):

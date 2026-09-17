@@ -1,0 +1,17 @@
+WEBVTT
+
+00:00.000 --> 00:06.000
+Conceptual animation, not measured model embeddings.
+Near the safety boundary, surface cues can obscure intent.
+
+00:06.000 --> 00:12.000
+Construct matched Safe-to-Unsafe and Unsafe-to-Safe instructions.
+Preserve the semantic frame; change the safety-critical factor.
+
+00:12.000 --> 00:18.000
+BCFT and SCR encourage safety-relevant representation shifts
+while preserving shared non-safety utility. Geometry is illustrative.
+
+00:18.000 --> 00:24.000
+Safe instructions receive helpful compliance.
+Unsafe instructions receive refusal or safe pivot. Both responses are safe.
