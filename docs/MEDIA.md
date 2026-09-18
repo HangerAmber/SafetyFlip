@@ -25,3 +25,26 @@ Requirements: Python 3.10+, Pillow 9.4.0 and an FFmpeg executable containing the
 To inspect the four chapter stills, add `--preview-dir runs/film-preview`. Default outputs are the bundled MP4 and JPEG poster. Existing files at those output paths are replaced deliberately. There are no build requirements for simply viewing the committed website.
 
 The original manuscript's training/data/deployment limitations still apply. The animation demonstrates the intended mechanism and does not extend the paper's evidence.
+
+## Inline repository animation
+
+The root README embeds `site/assets/boundary-animation.gif` directly, before the cases and repository guide. It contains the same complete 24-second film at 960 × 540 and 10 fps, looping without a player or external host. The `<picture>` element selects the static poster for browsers requesting reduced motion. The project website retains the native MP4 player with playback controls.
+
+Rebuild the GIF from the committed MP4:
+
+```bash
+python scripts/render_readme_animation.py
+```
+
+Only FFmpeg is required for this conversion. All paths in the README are relative to the repository; no personal account or external media URL is embedded. The GIF is an explanatory illustration with the same limitations as the video.
+
+## Case figures
+
+The README and website embed three 1600 × 960 PNG figures: `case-network.png`, `case-conflict.png` and `case-consent.png`. Matching SVG files preserve selectable text and vector geometry. All instruction, factor and response text is read directly from the fixed `examples` object in `site/app.js`, so the figures and interactive cases share the same authored content.
+
+```bash
+python -m pip install -r requirements-media.txt
+python scripts/render_case_figures.py
+```
+
+The renderer uses Pillow and installed Segoe UI or DejaVu Sans fonts; `--font-dir` selects a font directory. It reads the fixed object as data without evaluating JavaScript. The figures show the preserved frame, safety-critical change, policy behavior and two safe responses. They do not contain experimental judgments or claim to be released training examples. PNG files contain no identifying metadata, and no third-party media is used.

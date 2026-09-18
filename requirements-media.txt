@@ -1,3 +1,3 @@
-# Optional film rendering only. The website plays the bundled MP4 without these.
-# External executable: FFmpeg with the libx264 encoder.
+# Optional film and case-figure rendering; no dependencies needed for viewing.
+# Video/GIF builds also need an FFmpeg executable with the libx264 encoder.
 Pillow==9.4.0

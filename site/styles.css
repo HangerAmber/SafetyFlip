@@ -62,3 +62,20 @@
 @media(max-width:375px){.hero-film-intro h1{font-size:clamp(31px,10.3vw,37px)}}
 
 .skip-link{opacity:0;pointer-events:none}.skip-link:focus{opacity:1;pointer-events:auto}
+
+/* Actual case figures stay readable on the repository page and the website. */
+.case-overview.case-figure-gallery{grid-template-columns:minmax(0,1fr);gap:26px;margin-top:25px;margin-bottom:38px}
+.case-figure{margin:0;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--paper);min-width:0}
+.case-image-scroll{overflow-x:auto;scrollbar-width:thin;scrollbar-color:#a5b89a #ebefe4;overscroll-behavior-x:contain}
+.case-image-scroll img{display:block;width:100%;height:auto;max-width:none}
+.case-figure figcaption{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:17px 22px;background:#edf1e5;border-top:1px solid #d9e1d1}
+.case-figure figcaption h3{font:10px var(--mono);letter-spacing:.7px;color:#557b49}
+.case-figure-actions{display:flex;align-items:center;gap:20px;font-size:10px;color:#58744b}
+.case-figure-actions a:hover{color:var(--teal)}
+.case-figure .preview-open{margin:0;border:1px solid #bdcdb3;border-radius:4px;padding:8px 12px;background:#e5eddc;font-size:10px;gap:20px}
+.case-figure .preview-open.active,.case-figure .preview-open:hover{background:#d6e5ca;color:#315c36}
+.case-swipe-hint{display:none}
+@media(max-width:860px){.case-figure figcaption{padding:14px 17px;gap:15px}.case-figure-actions{gap:15px;font-size:9px}.case-figure .preview-open{font-size:9px;gap:12px}.case-figure figcaption h3{font-size:9px}}
+@media(max-width:620px){.case-overview.case-figure-gallery{gap:20px;margin-top:20px;margin-bottom:26px}.case-figure{border-radius:6px}.case-image-scroll img{width:200%;min-width:0}.case-figure figcaption{display:block;padding:14px 15px}.case-figure figcaption>div:first-child{display:flex;align-items:baseline;justify-content:space-between;gap:10px}.case-figure figcaption h3{font-size:8px;letter-spacing:.3px}.case-swipe-hint{display:block;font-size:7px;color:#7f9173}.case-figure-actions{justify-content:space-between;gap:10px;margin-top:13px;font-size:8px}.case-figure .preview-open{padding:7px 9px;font-size:8px;gap:10px}}
+@media(max-width:375px){.case-figure figcaption>div:first-child{display:block}.case-swipe-hint{margin-top:7px}.case-figure-actions{font-size:7px;gap:8px}.case-figure .preview-open{font-size:7px;gap:7px;padding:7px 8px}}
+@media print{.case-figure{break-inside:avoid}.case-image-scroll{overflow:visible}.case-image-scroll img{width:100%;min-width:0}.case-figure-actions,.case-swipe-hint{display:none}.case-figure figcaption{padding:10px 15px}}

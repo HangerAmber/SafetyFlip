@@ -53,6 +53,11 @@ class Links(HTMLParser):
         for attr in ("src", "href", "poster"):
             if attr in attrs:
                 self.links.append((tag, attr, attrs[attr]))
+        if "srcset" in attrs:
+            for candidate in attrs["srcset"].split(","):
+                parts = candidate.strip().split()
+                if parts:
+                    self.links.append((tag, "src", parts[0]))
 
 
 def audit(deny=()):
@@ -71,9 +76,14 @@ def audit(deny=()):
                 errors.append(f"{rel}: supplied identity marker found")
         if path.suffix == ".css" and re.search(r"(?:url\s*\(|@import).*?https?://", content, re.I):
             errors.append(f"{rel}: externally loaded stylesheet asset")
-        if path.suffix == ".html":
+        if path.suffix in {".html", ".md"}:
             parser = Links()
             parser.feed(content)
+            if path.suffix == ".md":
+                # Repository-authored inline Markdown images; HTML images and
+                # picture sources are handled by the parser above.
+                for target in re.findall(r"!\[[^\]]*\]\(<?([^\s)>]+)>?(?:\s+\"[^\"]*\")?\)", content):
+                    parser.links.append(("img", "src", target))
             for tag, attr, target in parser.links:
                 link = urlsplit(target)
                 if link.scheme in {"http", "https"}:
@@ -85,7 +95,7 @@ def audit(deny=()):
                         errors.append(f"{rel}: unexpected link scheme")
                     continue
                 if not link.path:
-                    if link.fragment and link.fragment not in parser.ids:
+                    if path.suffix == ".html" and link.fragment and link.fragment not in parser.ids:
                         errors.append(f"{rel}: missing anchor #{link.fragment}")
                     continue
                 dest = (path.parent / unquote(link.path)).resolve()
@@ -118,7 +128,7 @@ def main():
                 info.compress_type = zipfile.ZIP_DEFLATED
                 info.external_attr = 0o100644 << 16
                 archive.writestr(info, path.read_bytes())
-    print(json.dumps({"status": "passed", "files_checked": len(files), "checks": "text markers and local HTML links", "limitations": "heuristic; see docs/ANONYMITY.md"}, indent=2))
+    print(json.dumps({"status": "passed", "files_checked": len(files), "checks": "text markers, HTML links and embedded README assets", "limitations": "heuristic; see docs/ANONYMITY.md"}, indent=2))
 
 
 if __name__ == "__main__":

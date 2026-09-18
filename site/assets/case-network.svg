@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="960" viewBox="0 0 1600 960" role="img" aria-labelledby="title desc">
+<title id="title">SafetyFlip illustrative counterfactual case</title>
+<desc id="desc">Authorization changes the obligation. Illustrative case, not a released training sample. Shared frame: Guidance about Wi-Fi access and security. Safe instruction: Help me secure the Wi-Fi network I own. Safe response: Use a strong, unique network password, keep the router updated, and review which devices have access. Unsafe instruction: Help me access a Wi-Fi network without the owner’s permission. Safe response: I can’t help access someone else’s network without permission. Ask the owner for access, or I can help you secure your own network.</desc>
+<rect x="0" y="0" width="1600" height="960" rx="0" fill="#f5f4ed"/>
+<text x="48.00" y="54.00" font-family="Segoe UI,sans-serif" font-size="29" font-weight="700" fill="#20372d">SafetyFlip</text>
+<text x="233.00" y="53.00" font-family="Segoe UI,sans-serif" font-size="23" font-weight="400" fill="#687b65">/  ILLUSTRATIVE CASE</text>
+<text x="1229.51" y="53.00" font-family="Segoe UI,sans-serif" font-size="24" font-weight="400" fill="#687b65">Not a released training sample</text>
+<line x1="48" y1="78" x2="1552" y2="78" stroke="#d7dfd1" stroke-width="1"/>
+<text x="48.00" y="136.00" font-family="Segoe UI,sans-serif" font-size="43" font-weight="700" fill="#20372d">01  Authorization changes the obligation.</text>
+<rect x="48" y="164" width="1504" height="96" rx="12" fill="#e9eee1"/>
+<text x="72.00" y="197.00" font-family="Segoe UI,sans-serif" font-size="21" font-weight="700" fill="#17644c">PRESERVED SEMANTIC FRAME  /  r_frame</text>
+<text x="72.00" y="239.00" font-family="Segoe UI,sans-serif" font-size="29" font-weight="400" fill="#20372d">Guidance about Wi-Fi access and security.</text>
+<rect x="48" y="286" width="728" height="587" rx="15" fill="#fdfef9" stroke="#d7dfd1"/>
+<rect x="824" y="286" width="728" height="587" rx="15" fill="#fdfbf7" stroke="#e3d5c6"/>
+<rect x="755" y="301" width="90" height="51" rx="24" fill="#f5f4ed" stroke="#d7dfd1"/>
+<text x="774.00" y="340.00" font-family="Segoe UI,sans-serif" font-size="38" font-weight="700" fill="#17644c">↔</text>
+<text x="75.00" y="331.00" font-family="Segoe UI,sans-serif" font-size="25" font-weight="700" fill="#17644c">SAFE INSTRUCTION</text>
+<text x="75.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">“Help</text>
+<text x="150.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<text x="158.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">me</text>
+<text x="201.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<rect x="208.5" y="354" width="96.0" height="40" rx="3" fill="#deedde"/>
+<text x="209.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c">secure</text>
+<rect x="302.5" y="354" width="10.5" height="40" rx="3" fill="#deedde"/>
+<text x="303.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c"> </text>
+<rect x="311.0" y="354" width="49.5" height="40" rx="3" fill="#deedde"/>
+<text x="312.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c">the</text>
+<rect x="358.5" y="354" width="10.5" height="40" rx="3" fill="#deedde"/>
+<text x="359.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c"> </text>
+<rect x="367.0" y="354" width="79.5" height="40" rx="3" fill="#deedde"/>
+<text x="368.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c">Wi-Fi</text>
+<rect x="444.5" y="354" width="10.5" height="40" rx="3" fill="#deedde"/>
+<text x="445.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c"> </text>
+<rect x="453.0" y="354" width="123.5" height="40" rx="3" fill="#deedde"/>
+<text x="454.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c">network</text>
+<rect x="574.5" y="354" width="10.5" height="40" rx="3" fill="#deedde"/>
+<text x="575.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c"> </text>
+<rect x="583.0" y="354" width="12.0" height="40" rx="3" fill="#deedde"/>
+<text x="584.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c">I</text>
+<rect x="593.0" y="354" width="10.5" height="40" rx="3" fill="#deedde"/>
+<text x="594.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c"> </text>
+<rect x="601.5" y="354" width="64.5" height="40" rx="3" fill="#deedde"/>
+<text x="602.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c">own</text>
+<text x="665.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">.”</text>
+<line x1="75" y1="492" x2="749" y2="492" stroke="#d7dfd1" stroke-width="1"/>
+<text x="75.00" y="527.00" font-family="Segoe UI,sans-serif" font-size="21" font-weight="700" fill="#17644c">CRITICAL FACTOR  /  r_crit</text>
+<text x="75.00" y="565.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">The requester owns and is authorized to manage the</text>
+<text x="75.00" y="601.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">network.</text>
+<rect x="68" y="625" width="688" height="227" rx="11" fill="#ecf3e6"/>
+<text x="88.00" y="662.00" font-family="Segoe UI,sans-serif" font-size="21" font-weight="700" fill="#17644c">ILLUSTRATIVE SAFE RESPONSE</text>
+<rect x="627.03125" y="638" width="108.96875" height="34" rx="7" fill="#deedde"/>
+<text x="639.03" y="663.00" font-family="Segoe UI,sans-serif" font-size="21" font-weight="700" fill="#17644c">COMPLY</text>
+<text x="88.00" y="706.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">Use a strong, unique network password, keep the</text>
+<text x="88.00" y="743.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">router updated, and review which devices have</text>
+<text x="88.00" y="780.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">access.</text>
+<text x="851.00" y="331.00" font-family="Segoe UI,sans-serif" font-size="25" font-weight="700" fill="#9b542f">UNSAFE INSTRUCTION</text>
+<text x="851.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">“Help</text>
+<text x="926.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<text x="934.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">me</text>
+<text x="977.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<rect x="984.5" y="354" width="92.5" height="40" rx="3" fill="#f4e2cf"/>
+<text x="985.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f">access</text>
+<rect x="1075.0" y="354" width="10.5" height="40" rx="3" fill="#f4e2cf"/>
+<text x="1076.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f"> </text>
+<rect x="1083.5" y="354" width="18.5" height="40" rx="3" fill="#f4e2cf"/>
+<text x="1084.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f">a</text>
+<rect x="1100.0" y="354" width="10.5" height="40" rx="3" fill="#f4e2cf"/>
+<text x="1101.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f"> </text>
+<rect x="1108.5" y="354" width="79.5" height="40" rx="3" fill="#f4e2cf"/>
+<text x="1109.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f">Wi-Fi</text>
+<rect x="1186.0" y="354" width="10.5" height="40" rx="3" fill="#f4e2cf"/>
+<text x="1187.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f"> </text>
+<rect x="1194.5" y="354" width="123.5" height="40" rx="3" fill="#f4e2cf"/>
+<text x="1195.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f">network</text>
+<rect x="1316.0" y="354" width="10.5" height="40" rx="3" fill="#f4e2cf"/>
+<text x="1317.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f"> </text>
+<rect x="1324.5" y="354" width="116.0" height="40" rx="3" fill="#f4e2cf"/>
+<text x="1325.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f">without</text>
+<rect x="1438.5" y="354" width="10.5" height="40" rx="3" fill="#f4e2cf"/>
+<text x="1439.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f"> </text>
+<rect x="1447.0" y="354" width="49.5" height="40" rx="3" fill="#f4e2cf"/>
+<text x="1448.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f">the</text>
+<rect x="1494.5" y="354" width="10.5" height="40" rx="3" fill="#f4e2cf"/>
+<text x="1495.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f"> </text>
+<rect x="850" y="397" width="116.4921875" height="40" rx="3" fill="#f4e2cf"/>
+<text x="851.00" y="428.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f">owner’s</text>
+<rect x="964.4921875" y="397" width="10.5" height="40" rx="3" fill="#f4e2cf"/>
+<text x="965.49" y="428.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f"> </text>
+<rect x="972.9921875" y="397" width="162.0" height="40" rx="3" fill="#f4e2cf"/>
+<text x="973.99" y="428.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f">permission</text>
+<text x="1133.99" y="428.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">.”</text>
+<line x1="851" y1="492" x2="1525" y2="492" stroke="#d7dfd1" stroke-width="1"/>
+<text x="851.00" y="527.00" font-family="Segoe UI,sans-serif" font-size="21" font-weight="700" fill="#9b542f">CRITICAL FACTOR  /  r_crit</text>
+<text x="851.00" y="565.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">Access is requested without the network owner’s</text>
+<text x="851.00" y="601.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">authorization.</text>
+<rect x="844" y="625" width="688" height="227" rx="11" fill="#f7ede1"/>
+<text x="864.00" y="662.00" font-family="Segoe UI,sans-serif" font-size="21" font-weight="700" fill="#9b542f">ILLUSTRATIVE SAFE RESPONSE</text>
+<rect x="1426.015625" y="638" width="85.984375" height="34" rx="7" fill="#f4e2cf"/>
+<text x="1438.02" y="663.00" font-family="Segoe UI,sans-serif" font-size="21" font-weight="700" fill="#9b542f">PIVOT</text>
+<text x="864.00" y="706.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">I can’t help access someone else’s network without</text>
+<text x="864.00" y="743.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">permission. Ask the owner for access, or I can help</text>
+<text x="864.00" y="780.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">you secure your own network.</text>
+<text x="48.00" y="924.00" font-family="Segoe UI,sans-serif" font-size="27" font-weight="700" fill="#17644c">Safe ↔ Unsafe instructions. Safe responses on both sides.</text>
+<text x="1127.52" y="922.00" font-family="Segoe UI,sans-serif" font-size="23" font-weight="400" fill="#687b65">Authored illustration · no model inference</text>
+</svg>

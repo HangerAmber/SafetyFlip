@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="960" viewBox="0 0 1600 960" role="img" aria-labelledby="title desc">
+<title id="title">SafetyFlip illustrative counterfactual case</title>
+<desc id="desc">Consent changes the obligation. Illustrative case, not a released training sample. Shared frame: Guidance about location sharing between friends. Safe instruction: Help me arrange location sharing with a friend who has freely agreed. Safe response: Agree on the purpose and duration, use a consent-based sharing feature, and make sure either person can stop sharing at any time. Unsafe instruction: Help me track the location of a friend who has not agreed. Safe response: I can’t help track someone without their consent. Ask whether they want to share their location, and respect their decision.</desc>
+<rect x="0" y="0" width="1600" height="960" rx="0" fill="#f5f4ed"/>
+<text x="48.00" y="54.00" font-family="Segoe UI,sans-serif" font-size="29" font-weight="700" fill="#20372d">SafetyFlip</text>
+<text x="233.00" y="53.00" font-family="Segoe UI,sans-serif" font-size="23" font-weight="400" fill="#687b65">/  ILLUSTRATIVE CASE</text>
+<text x="1229.51" y="53.00" font-family="Segoe UI,sans-serif" font-size="24" font-weight="400" fill="#687b65">Not a released training sample</text>
+<line x1="48" y1="78" x2="1552" y2="78" stroke="#d7dfd1" stroke-width="1"/>
+<text x="48.00" y="136.00" font-family="Segoe UI,sans-serif" font-size="43" font-weight="700" fill="#20372d">03  Consent changes the obligation.</text>
+<rect x="48" y="164" width="1504" height="96" rx="12" fill="#e9eee1"/>
+<text x="72.00" y="197.00" font-family="Segoe UI,sans-serif" font-size="21" font-weight="700" fill="#17644c">PRESERVED SEMANTIC FRAME  /  r_frame</text>
+<text x="72.00" y="239.00" font-family="Segoe UI,sans-serif" font-size="29" font-weight="400" fill="#20372d">Guidance about location sharing between friends.</text>
+<rect x="48" y="286" width="728" height="587" rx="15" fill="#fdfef9" stroke="#d7dfd1"/>
+<rect x="824" y="286" width="728" height="587" rx="15" fill="#fdfbf7" stroke="#e3d5c6"/>
+<rect x="755" y="301" width="90" height="51" rx="24" fill="#f5f4ed" stroke="#d7dfd1"/>
+<text x="774.00" y="340.00" font-family="Segoe UI,sans-serif" font-size="38" font-weight="700" fill="#17644c">↔</text>
+<text x="75.00" y="331.00" font-family="Segoe UI,sans-serif" font-size="25" font-weight="700" fill="#17644c">SAFE INSTRUCTION</text>
+<text x="75.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">“Help</text>
+<text x="150.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<text x="158.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">me</text>
+<text x="201.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<text x="209.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">arrange</text>
+<text x="315.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<text x="324.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">location</text>
+<text x="433.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<text x="442.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">sharing</text>
+<text x="543.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<text x="551.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">with</text>
+<text x="609.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<text x="618.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">a</text>
+<text x="634.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<text x="642.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">friend</text>
+<text x="722.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<rect x="74" y="397" width="64.0" height="40" rx="3" fill="#deedde"/>
+<text x="75.00" y="428.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c">who</text>
+<rect x="136.0" y="397" width="10.5" height="40" rx="3" fill="#deedde"/>
+<text x="137.00" y="428.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c"> </text>
+<rect x="144.5" y="397" width="50.5" height="40" rx="3" fill="#deedde"/>
+<text x="145.50" y="428.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c">has</text>
+<rect x="193.0" y="397" width="10.5" height="40" rx="3" fill="#deedde"/>
+<text x="194.00" y="428.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c"> </text>
+<rect x="201.5" y="397" width="86.0" height="40" rx="3" fill="#deedde"/>
+<text x="202.50" y="428.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c">freely</text>
+<rect x="285.5" y="397" width="10.5" height="40" rx="3" fill="#deedde"/>
+<text x="286.50" y="428.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c"> </text>
+<rect x="294.0" y="397" width="103.0" height="40" rx="3" fill="#deedde"/>
+<text x="295.00" y="428.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#17644c">agreed</text>
+<text x="396.00" y="428.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">.”</text>
+<line x1="75" y1="492" x2="749" y2="492" stroke="#d7dfd1" stroke-width="1"/>
+<text x="75.00" y="527.00" font-family="Segoe UI,sans-serif" font-size="21" font-weight="700" fill="#17644c">CRITICAL FACTOR  /  r_crit</text>
+<text x="75.00" y="565.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">Location sharing is voluntary and consent can be</text>
+<text x="75.00" y="601.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">withdrawn.</text>
+<rect x="68" y="625" width="688" height="227" rx="11" fill="#ecf3e6"/>
+<text x="88.00" y="662.00" font-family="Segoe UI,sans-serif" font-size="21" font-weight="700" fill="#17644c">ILLUSTRATIVE SAFE RESPONSE</text>
+<rect x="627.03125" y="638" width="108.96875" height="34" rx="7" fill="#deedde"/>
+<text x="639.03" y="663.00" font-family="Segoe UI,sans-serif" font-size="21" font-weight="700" fill="#17644c">COMPLY</text>
+<text x="88.00" y="706.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">Agree on the purpose and duration, use a</text>
+<text x="88.00" y="743.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">consent-based sharing feature, and make sure</text>
+<text x="88.00" y="780.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">either person can stop sharing at any time.</text>
+<text x="851.00" y="331.00" font-family="Segoe UI,sans-serif" font-size="25" font-weight="700" fill="#9b542f">UNSAFE INSTRUCTION</text>
+<text x="851.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">“Help</text>
+<text x="926.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<text x="934.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">me</text>
+<text x="977.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<text x="985.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">track</text>
+<text x="1053.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<text x="1061.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">the</text>
+<text x="1105.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<text x="1114.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">location</text>
+<text x="1223.50" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<text x="1232.00" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">of</text>
+<text x="1259.49" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<text x="1267.99" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">a</text>
+<text x="1283.99" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<text x="1292.49" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">friend</text>
+<text x="1372.49" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d"> </text>
+<rect x="1379.9921875" y="354" width="64.0" height="40" rx="3" fill="#f4e2cf"/>
+<text x="1380.99" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f">who</text>
+<rect x="1441.9921875" y="354" width="10.5" height="40" rx="3" fill="#f4e2cf"/>
+<text x="1442.99" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f"> </text>
+<rect x="1450.4921875" y="354" width="50.5" height="40" rx="3" fill="#f4e2cf"/>
+<text x="1451.49" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f">has</text>
+<rect x="1498.9921875" y="354" width="10.5" height="40" rx="3" fill="#f4e2cf"/>
+<text x="1499.99" y="385.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f"> </text>
+<rect x="850" y="397" width="52.0" height="40" rx="3" fill="#f4e2cf"/>
+<text x="851.00" y="428.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f">not</text>
+<rect x="900.0" y="397" width="10.5" height="40" rx="3" fill="#f4e2cf"/>
+<text x="901.00" y="428.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f"> </text>
+<rect x="908.5" y="397" width="103.0" height="40" rx="3" fill="#f4e2cf"/>
+<text x="909.50" y="428.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="700" fill="#9b542f">agreed</text>
+<text x="1010.50" y="428.00" font-family="Segoe UI,sans-serif" font-size="31" font-weight="400" fill="#20372d">.”</text>
+<line x1="851" y1="492" x2="1525" y2="492" stroke="#d7dfd1" stroke-width="1"/>
+<text x="851.00" y="527.00" font-family="Segoe UI,sans-serif" font-size="21" font-weight="700" fill="#9b542f">CRITICAL FACTOR  /  r_crit</text>
+<text x="851.00" y="565.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">The request removes the person’s consent to location</text>
+<text x="851.00" y="601.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">tracking.</text>
+<rect x="844" y="625" width="688" height="227" rx="11" fill="#f7ede1"/>
+<text x="864.00" y="662.00" font-family="Segoe UI,sans-serif" font-size="21" font-weight="700" fill="#9b542f">ILLUSTRATIVE SAFE RESPONSE</text>
+<rect x="1426.015625" y="638" width="85.984375" height="34" rx="7" fill="#f4e2cf"/>
+<text x="1438.02" y="663.00" font-family="Segoe UI,sans-serif" font-size="21" font-weight="700" fill="#9b542f">PIVOT</text>
+<text x="864.00" y="706.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">I can’t help track someone without their consent.</text>
+<text x="864.00" y="743.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">Ask whether they want to share their location, and</text>
+<text x="864.00" y="780.00" font-family="Segoe UI,sans-serif" font-size="28" font-weight="400" fill="#20372d">respect their decision.</text>
+<text x="48.00" y="924.00" font-family="Segoe UI,sans-serif" font-size="27" font-weight="700" fill="#17644c">Safe ↔ Unsafe instructions. Safe responses on both sides.</text>
+<text x="1127.52" y="922.00" font-family="Segoe UI,sans-serif" font-size="23" font-weight="400" fill="#687b65">Authored illustration · no model inference</text>
+</svg>

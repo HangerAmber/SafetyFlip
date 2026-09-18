@@ -5,6 +5,45 @@
 
 SafetyFlip constructs matched **Safe ↔ Unsafe instruction pairs** that preserve the non-safety semantic frame while changing the safety-critical factor. Both sides receive safe, policy-consistent responses: helpful compliance for safe requests, refusal or a relevant safe pivot for unsafe requests. Boundary-Constrained Fine-Tuning (BCFT) combines joint structured annotation–response supervision, a base-policy KL penalty, and Safety Contrastive Regularization (SCR).
 
+## SafetyFlip in motion
+
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="site/assets/boundary-poster.jpg">
+  <img src="site/assets/boundary-animation.gif" alt="24-second SafetyFlip animation: ambiguous boundary, bidirectional counterfactual pairs, conceptual boundary learning, then safe responses on both sides." width="960">
+</picture>
+
+**Same semantic frame. A changed safety-critical factor. Safe responses on both sides.** This 24-second loop uses authored geometry, not measured embeddings or a recorded training trajectory. Unsafe instructions retain their labels even when their responses are safe. [MP4 with playback controls on the project page](site/index.html) · [Download the MP4](site/assets/boundary-film.mp4) · [Animation build notes](docs/MEDIA.md)
+
+## Counterfactual cases
+
+These three original illustrations follow the paper's structured boundary annotations. They are **not released training samples, live model outputs or teacher-validated records**. Each figure shows the shared frame, changed critical factor, policy behavior and safe response; no validation scores are invented. Either side can be the seed of a reversal.
+
+![Case 1: Wi-Fi authorization changes the instruction label. The owned network receives security advice; unauthorized access receives refusal and a safe alternative.](site/assets/case-network.png)
+
+![Case 2: The same neighborhood dispute changes from de-escalation to intimidation. Helpful conflict resolution and refusal with a safe pivot both remain safe responses.](site/assets/case-conflict.png)
+
+![Case 3: Location sharing changes from freely given consent to no consent. The model should explain voluntary sharing or refuse non-consensual tracking.](site/assets/case-consent.png)
+
+## Repository structure and code
+
+```text
+safetyflip/     strict records, construction, objectives, smoke run, evaluation
+configs/        reported paper settings and separate toy settings
+data/           clearly labeled illustrative fixtures
+tests/          mathematical, parsing, gate and aggregation checks
+site/           project page, inline media, case figures and local paper
+docs/           equation alignment, reproduction gaps, media and anonymity
+scripts/        local preview, reproducible media renderers and release checks
+```
+
+| Module | What it does |
+|---|---|
+| [schema.py](safetyflip/schema.py) | Typed pairs and annotations; recorded validation must satisfy the strict `>0.8` gate and all safety conditions. |
+| [pipeline.py](safetyflip/pipeline.py) | Analysis → Reversal → independent re-analysis → both Answers → Validation. The included provider replays fixtures. |
+| [losses.py](safetyflip/losses.py) | Joint SFT, forward KL, directional displacement, orthogonal response consistency and auxiliary critics. |
+| [smoke.py](safetyflip/smoke.py) | Tiny CPU optimization to inspect gradient flow; does not train the paper's Qwen models. |
+| [evaluation.py](safetyflip/evaluation.py) | Aggregate supplied judgments with explicit denominators; does not run inference, attacks or benchmark judges. |
+
 **Release status:** this repository provides executable **reference components**, transparent offline fixtures and an interactive explanatory website. The full experimental datasets, trained checkpoints, exact teacher prompts, end-to-end distributed training/deployment recipe and benchmark generations/judges are **forthcoming**. The included CPU smoke run does not reproduce the reported model results. See the [paper alignment map](docs/PAPER_ALIGNMENT.md) for equation-level scope and implementation choices.
 
 ## Start here
@@ -72,7 +111,7 @@ HarmBench, XSTest and MT-Bench are public OOD evaluations. SRR/BMR above use the
 | Pair schema, strict gate and four-role pipeline contract | Included; replay provider is offline and uses fixtures |
 | BCFT/SCR reference mathematics and gradient tests | Included; CPU toy optimization only |
 | Explicit-judgment metric aggregation | Included; does not run benchmark judges |
-| Three interactive website demos and local paper | Included; explanatory/static data |
+| Inline boundary animation, three case figures, interactive website and local paper | Included; authored illustrations and paper-reported results |
 | Full 8,000 accepted training pairs and source manifests | Forthcoming |
 | 500-pair SafetyFlip-Test and external evaluation subset IDs | Forthcoming |
 | Exact teacher prompts, decoding and score-calibration protocol | Forthcoming |
@@ -92,18 +131,6 @@ python scripts/check_release.py --manifest --zip ../SafetyFlip-anonymous.zip
 ```
 
 The exporter omits Git history, environments, caches and local run outputs and includes file hashes. The automated checks are heuristic, not a guarantee of anonymity. A private development repository is **not an anonymous public host**: publish only the audited export via the anonymous service. Review [the anonymity guide](docs/ANONYMITY.md) before release.
-
-## Repository map
-
-```text
-safetyflip/     strict records, pipeline contracts, losses, CPU smoke, evaluation
-configs/        reported paper settings and separate toy settings
-data/           clearly labeled illustrative fixtures
-tests/          mathematical, parsing, gate and aggregation checks
-site/           standalone responsive project page and local paper
-docs/           equation alignment, reproduction gaps, migration and anonymity
-scripts/        local preview and anonymous export checks
-```
 
 The [migration notes](docs/MIGRATION.md) document why the older ARG/SB-CoT interfaces were replaced. This implementation uses the current paper's **structured boundary annotations**, which are compact fields rather than free-form chain-of-thought.
 
