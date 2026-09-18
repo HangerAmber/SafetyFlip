@@ -48,13 +48,3 @@ Table 2 (p. 8) reports Qwen2.5-7B ASR **58.4%→6.5%**, XSTest OR **1.2%→2.1%*
 SafetyFlip-Test contains **500 pairs** and is an internal diagnostic (A.1, p. 14). SRR and BMR from this set must be distinguished from public OOD HarmBench, XSTest, and MT-Bench results. The external BeaverTails subset is a separate check. SRR is conditional on safe-redirection applicability and must not be compared directly across the two distributions (A.11, p. 20).
 
 Table 2 reports three-seed SafetyFlip values of ASR `6.51 ± 0.12`, OR `2.10 ± 0.20`, and MT-Bench `7.85 ± 0.03`; it does not define whether ± means a standard deviation, standard error, or interval. Website examples and plots are either attributed paper values or explicitly illustrative content.
-
-## Details awaiting clarification
-
-- Table 7 (p. 15) counts 8,000 accepted **pairs**, while §4.3 (p. 8) refers to 8k **examples**. Batch units and exact records require the released manifest.
-- Eq. 1 uses a non-strict threshold symbol, whereas A.3 specifies `>0.8`. The reference gate follows the explicit implementation description.
-- Annotation-first supervision is specified, but the mechanism for annotation-free decoding is not. Generating an annotation and hiding it would still add inference work.
-- Figure 5 (p. 18) has plot legends that do not match its caption's metrics. No approximate scaling series is presented as exact data in this release.
-- The claim of an ASR drop of at least 45 percentage points at every scale (p. 18) conflicts with Table 10's 72B change, 42.5→3.8. Tables are used for numerical comparisons.
-
-See [Reproducibility](REPRODUCIBILITY.md) for release boundaries and [Migration](MIGRATION.md) for corrections to the earlier scaffold.
