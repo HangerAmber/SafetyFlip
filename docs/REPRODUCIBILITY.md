@@ -49,10 +49,3 @@ The reported 16 × A100 80 GB training configuration and approximately 48 GPU-ho
 
 Report numerator, denominator, units, and the source of every judgment. Empty support means unavailable, not 0% success or failure. Do not substitute a keyword classifier for the paper's missing judge protocol. Internal SafetyFlip-Test metrics and external BeaverTails metrics need separate dataset labels; their SRR values are distribution-dependent.
 
-## Claims and demonstrations
-
-Keep paper-reported results separate from new measurements. Table 2's single-run values and three-seed values are different report types. The meaning of its ± statistic remains unspecified. Repeated rendering of a published number is not an independent replication.
-
-Paper examples can be replayed with attribution. Additional frames, annotations, or responses written for the interface must be called illustrative. Simulated geometry is a concept visualization, not a measured embedding. The website must not claim live inference, validation confidence, or latency when no model was run.
-
-Before releasing any run artifact, apply the [anonymous export checklist](ANONYMITY.md). Reproducibility metadata should identify datasets, configurations and model versions without revealing author identities or workstation paths.
