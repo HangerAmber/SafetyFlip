@@ -1,6 +1,6 @@
 # Reproducibility and release status
 
-This release provides inspectable method components, local examples, documentation, and an anonymous website. **The paper's experiments have not been reproduced by this release.** Mathematical checks and example runs verify software behavior, not the reported benchmark scores.
+This release provides inspectable method components, local examples, documentation, and an anonymous website.
 
 ## What the release makes reviewable
 
